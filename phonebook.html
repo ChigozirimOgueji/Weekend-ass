@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone Book App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    input[type="text"] {
+      width: 200px;
+      height: 30px;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+      width: 100px;
+      height: 30px;
+      background-color: #008CBA;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    #phone-book {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    #phone-book table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    #phone-book table th, #phone-book table td {
+      border: 1px solid #ddd;
+      padding: 5px;
+    }
+  </style>
+  </head>
+
+<body>
+  <h1>Phone Book App</h1>
+  <form id="phone-book-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name">
+    <br>
+    <label for="phone-number">Phone Number:</label>
+    <input type="text" id="phone-number">
+    <br>
+    <input type="submit" value="Add">
+  </form>
+  <br>
+  <div id="phone-book">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone Number</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="phonebookapp.js">
+    
+  </script>
+</body>
+</html>

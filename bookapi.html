@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book API</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+  
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+  
+      th, td {
+        border: 1px solid #ddd;
+        padding: 5px;
+      }
+    </style>
+    </head>
+    
+<body>
+  <h1>Book API</h1>
+    <script src="bookapi.js"></script>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Insert book data here -->
+    </tbody>
+  </table>
+
+  <script>
+    // Get the book data from the API
+    fetch('http://localhost:3000/books')
+      .then(response => response.json())
+      .then(data => {
+        // Insert the book data into the table
+        const tableBody = document.querySelector('tbody');
+        data.forEach(book => {
+          const newRow = document.createElement('tr');
+
+          const idCell = document.createElement('td');
+          idCell.textContent = book.id;
+
+          const titleCell = document.createElement('td');
+          titleCell.textContent = book.title;
+
+          const authorCell = document.createElement('td');
+          authorCell.textContent = book.author;
+
+          const genreCell = document.createElement('td');
+          genreCell.textContent = book.genre;
+
+          newRow.appendChild(idCell);
+          newRow.appendChild(titleCell);
+          newRow.appendChild(authorCell);
+          newRow.appendChild(genreCell);
+
+          tableBody.appendChild(newRow);
+        });
+      });
+  </script>
+</body>
+</html>
